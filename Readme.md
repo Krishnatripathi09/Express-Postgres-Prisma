@@ -1,0 +1,4 @@
+- Created a Basic Express Server after installin express and dotenv and then started it on PORT 3000:
+- Next we will install prisma ORM in our Project with command npm i prisma and run our cli with command npx prisma.
+- Next we will initialize prisma with command **npx prisma init**
+- Next we will install prisma Client to connect to our database. **npm install @prisma/client**
