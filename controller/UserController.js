@@ -29,4 +29,20 @@ export const createUser = async (req, res) => {
   return res.status(201).send(`User ${firstName} created successfully`);
 };
 
-export default createUser;
+export const updateUser = async (req, res) => {
+  const userId = req.params.id;
+
+  const { firstName, lastName, password } = req.body;
+
+  await prisma.user.update({
+    where: {
+      id: Number(userId),
+    },
+    data: {
+      firstName,
+      lastName,
+    },
+  });
+
+  return res.status(200).send(`User ${firstName} Updated Successfully`);
+};

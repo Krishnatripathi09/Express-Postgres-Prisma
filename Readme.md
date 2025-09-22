@@ -73,3 +73,5 @@ const createUser = async (req, res) => {
   return res.status(201).send(`User ${firstName} created successfully`);
 };
 ```
+
+[Prisma model queries](https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries)
