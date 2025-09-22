@@ -46,3 +46,15 @@ export const updateUser = async (req, res) => {
 
   return res.status(200).send(`User ${firstName} Updated Successfully`);
 };
+
+export const fetchUsers = async (req, res) => {
+  const users = await prisma.user.findMany({
+    select: {
+      firstName: true,
+      lastName: true,
+      email: true,
+    },
+  });
+
+  return res.json({ status: 200, data: users });
+};
