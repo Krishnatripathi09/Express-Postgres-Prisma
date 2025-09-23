@@ -58,3 +58,15 @@ export const fetchUsers = async (req, res) => {
 
   return res.json({ status: 200, data: users });
 };
+
+export const deleteUser = async (req, res) => {
+  const userId = req.params.id;
+
+  await prisma.user.delete({
+    where: {
+      id: Number(userId),
+    },
+  });
+
+  return res.json({ status: 200, msg: "User Deleted Successfully" });
+};
