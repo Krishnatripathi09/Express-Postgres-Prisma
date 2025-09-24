@@ -75,3 +75,17 @@ const createUser = async (req, res) => {
 ```
 
 [Prisma model queries](https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries)
+
+# Relationship in prisma :
+
+To create a relation between two tables in postgres using prisma we have created one more model
+
+```JS
+model Post {
+  id          Int    @id @default(autoincrement())
+  user        User   @relation(fields: [user_id], references: [id])
+  user_id     Int
+  title       String
+  description String
+}
+```
