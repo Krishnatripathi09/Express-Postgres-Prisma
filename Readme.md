@@ -79,6 +79,7 @@ const createUser = async (req, res) => {
 # Relationship in prisma :
 
 To create a relation between two tables in postgres using prisma we have created one more model
+Post and in that we have passed user id field as reference to the user.
 
 ```JS
 model Post {
@@ -89,3 +90,19 @@ model Post {
   description String
 }
 ```
+
+Ande we have also made our comment schema :
+
+```JS
+model Comment {
+  id         String   @id @default(uuid())
+  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  post_id    Int
+  user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id    Int
+  comment    String
+  created_at DateTime @default(now())
+}
+```
+
+And in that we have passed our post and user model as relationship.
