@@ -1,8 +1,11 @@
 import { Router } from "express";
 import UserRouter from "./UserRoutes.js";
+import PostRouter from "./PostRoutes.js";
 
-const RouteUser = Router();
+const router = Router();
 
-RouteUser.use("/api/user", UserRouter);
+router.use("/api/user", UserRouter);
 
-export default RouteUser;
+router.use("/api/post", PostRouter);
+
+export default router;
