@@ -33,13 +33,13 @@ export const fetchComments = async (req, res) => {
   return res.json({ status: 200, data: comment });
 };
 
-export const fetchAllPosts = async (req, res) => {
+export const fetchAllComments = async (req, res) => {
   const posts = await prisma.comment.findMany({});
 
   return res.json({ status: 200, data: posts });
 };
 
-export const deletePost = async (req, res) => {
+export const deleteComment = async (req, res) => {
   const postId = req.params.id;
 
   await prisma.comment.delete({
