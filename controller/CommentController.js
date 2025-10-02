@@ -1,7 +1,7 @@
 import prisma from "../DB/db.config.js";
 
 export const createComment = async (req, res) => {
-  const { user_id, title, description } = req.body;
+  const { user_id, post_id, comment } = req.body;
 
   if (!user_id || !title || !description) {
     res.status(400).send(" All the Fields are required");
