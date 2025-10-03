@@ -22,6 +22,7 @@ export const createUser = async (req, res) => {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      age: age,
       password: password,
     },
   });
