@@ -25,7 +25,7 @@ export const fetchPosts = async (req, res) => {
       id: Number(postId),
     },
   });
-
+  console.log(post);
   return res.json({ status: 200, data: post });
 };
 
